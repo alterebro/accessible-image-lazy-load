@@ -1,0 +1,27 @@
+{
+  "name": "gandul",
+  "version": "1.0.1",
+  "description": "Accessible Lazy Loading Images",
+  "main": "src/gandul.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alterebro/gandul.git"
+  },
+  "keywords": [
+    "lazy",
+    "loading",
+    "lazyload",
+    "lazyloading",
+    "accesible",
+    "gandul"
+  ],
+  "author": "Jorge Moreno, moro.es (@alterebro)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alterebro/gandul/issues"
+  },
+  "homepage": "https://github.com/alterebro/gandul#readme"
+}
