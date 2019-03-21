@@ -1,14 +1,14 @@
 {
-  "name": "gandul",
+  "name": "accessible-image-lazy-load",
   "version": "1.0.2",
   "description": "Accessible Lazy Loading Images",
-  "main": "src/gandul.js",
+  "main": "dist/gandul.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alterebro/gandul.git"
+    "url": "git+https://github.com/alterebro/accessible-image-lazy-load.git"
   },
   "keywords": [
     "lazy",
@@ -21,9 +21,9 @@
   "author": "Jorge Moreno, moro.es (@alterebro)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alterebro/gandul/issues"
+    "url": "https://github.com/alterebro/accessible-image-lazy-load/issues"
   },
-  "homepage": "https://github.com/alterebro/gandul#readme",
+  "homepage": "https://github.com/alterebro/accessible-image-lazy-load#readme",
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.1",
