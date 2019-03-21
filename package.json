@@ -1,6 +1,6 @@
 {
   "name": "accessible-image-lazy-load",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "gandul : Accessible Lazy Loading Images",
   "main": "dist/gandul.min.js",
   "scripts": {
