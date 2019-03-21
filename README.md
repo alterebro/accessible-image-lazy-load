@@ -19,14 +19,33 @@ In order to avoid that **gandul** 😴 works by taking an anchor hyperlink `<a>`
 **For example, if you write this:**
 
 ```html
-<a href="http://placekitten.com/200/200" class="gandul">Nice kitten</a>
+<a href="http://placekitten.com/320/180" class="gandul">Nice kitten</a>
 ```
 
 **You'll get this:**
 
 ```html
-<img src="http://placekitten.com/200/200" class="gandul" alt="Nice kitten" />
+<img src="http://placekitten.com/320/180" class="gandul" alt="Nice kitten" />
 ```
+
+<table>
+<thead>
+    <tr>  
+        <th>HTML input</th>
+        <th>gandul 😴 output</th>
+    </tr>  
+</thead>
+<tbody>
+    <tr>
+        <td><code>&lt;a href="http://placekitten.com/320/180" class="gandul"&gt;Nice kitten&lt;/a&gt;</code></td>
+        <td><code>&lt;img src="http://placekitten.com/320/180" class="gandul" alt="Nice kitten" /&gt;</code></td>
+    </tr>
+    <tr>
+        <td><a href="http://placekitten.com/320/180" class="gandul">Nice kitten</a></td>
+        <td><img src="http://placekitten.com/320/180" class="gandul" alt="Nice kitten" /></td>
+    </tr>
+</tbody>
+</table>
 
 ## How to use it <a name="howto"></a>
 
