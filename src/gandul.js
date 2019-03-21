@@ -41,9 +41,9 @@
                     _img.setAttribute( _replaceAttr(_atts[i].nodeName), _atts[i].nodeValue );
                 }
 
-                _parent.insertBefore(_img, el);
-                _parent.removeChild(el);
-                // _parent.replaceChild(_img, el);
+                // _parent.insertBefore(_img, el);
+                // _parent.removeChild(el);
+                _parent.replaceChild(_img, el);
 
                 window.setTimeout(function() { _img.classList.add('gandul-active') }, 500);
             }

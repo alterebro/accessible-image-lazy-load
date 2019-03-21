@@ -1,7 +1,7 @@
 {
   "name": "accessible-image-lazy-load",
   "version": "1.0.2",
-  "description": "Accessible Lazy Loading Images",
+  "description": "gandul : Accessible Lazy Loading Images",
   "main": "dist/gandul.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,8 @@
   },
   "keywords": [
     "lazy",
+    "image",
+    "load",
     "loading",
     "lazyload",
     "lazyloading",
