@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>gandul examples</title>
+    <style media="screen">
+        p { height: 480px; background: #eee; overflow: hidden; }
+        img.gandul { opacity: 0; transition: all .5s linear; }
+        img.gandul-active { opacity: 1; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Accessible lazy loading images : 😴 <strong>gandul</strong> examples</h1>
+        <hr />
+    </header>
+
+    <main>
+        <h3>Width attribute on the images</h3>
+        <p><a href="../gandul.png" data-width="256" class="gandul">gandul!</a></p>
+        <p><a href="http://placekitten.com/640/480" data-width="320" class="gandul">Nice kitten</a></p>
+        <p><a href="http://placekitten.com/960/720" data-width="320" class="gandul">Nice kitten</a></p>
+        <hr />
+
+        <h3>Responsive image (sizes &amp; srcset)</h3>
+        <p>
+        <a href="http://placekitten.com/800/400"
+           data-srcset="http://placekitten.com/320/160 320w,
+                     http://placekitten.com/480/240 480w,
+                     http://placekitten.com/800/400 800w"
+           data-sizes="(max-width: 320px) 280px,
+                    (max-width: 480px) 440px,
+                    800px"
+           class="gandul">Nice kitten</a>
+        </p>
+        <hr />
+
+        <h3>Images with id and class attributes</h3>
+        <p><a href="http://placekitten.com/600/400" id="cat" class="nice kitten gandul">Nice kitten</a></p>
+        <p><a href="http://placekitten.com/500/500" id="kitty" class="square kitty gandul">Another Nice kitten</a></p>
+        <hr />
+
+        <h3>Element with all options and behaviour overwritten</h3>
+        <p><a href="http://placekitten.com/300/200" class="gandul-hyperlink">Cat image</a></p>
+        <hr />
+    </main>
+
+    <footer>
+        <div><a href="https://github.com/alterebro/accessible-image-lazy-load#readme"><strong>gandul</strong> 😴 : accessible-image-lazy-load</a></div>
+    </footer>
+
+<script src="../dist/gandul.min.js" charset="utf-8"></script>
+<script>
+let a = gandul();
+let b = gandul('a.gandul-hyperlink', { threshold: .5 }, function(el) {
+    el.innerHTML += ` : [ ${el.href} ]`;
+    el.style.fontSize = '36px';
+    console.log(el);
+});
+</script>
+</body>
+</html>
