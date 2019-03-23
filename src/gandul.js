@@ -1,10 +1,10 @@
 ;(function(global){
 
-    'use strict';
-    const module_name = 'gandul';
+    "use strict";
+    const module_name = "gandul";
     const factory = function(){
 
-        const gandul = function(target = 'a.gandul', opts = {}, action = null) {
+        const gandul = function(target = "a.gandul", opts = {}, action = null) {
 
             // Options
             const defaults = {
@@ -19,10 +19,10 @@
 
                 let _replaceAttr = function(input) {
                     let _attr = {
-                        'href' : 'src',
-                        'data-srcset' : 'srcset',
-                        'data-sizes' : 'sizes',
-                        'data-width' : 'width'
+                        "href" : "src",
+                        "data-srcset" : "srcset",
+                        "data-sizes" : "sizes",
+                        "data-width" : "width"
                     }
                     return !(input in _attr) ? input : _attr[input];
                 }
@@ -33,7 +33,7 @@
 
                 // Default Action
                 let _parent = el.parentNode;
-                let _img = document.createElement('img');
+                let _img = document.createElement("img");
                 _img.alt = _truncateStr(el.innerText);
 
                 let _atts = el.attributes;
@@ -45,7 +45,7 @@
                 // _parent.removeChild(el);
                 _parent.replaceChild(_img, el);
 
-                window.setTimeout(function() { _img.classList.add('gandul-active') }, 500);
+                window.setTimeout(function() { _img.classList.add("gandul-active") }, 500);
             }
 
             // Observer callback
@@ -59,7 +59,7 @@
                         gandulObserver.unobserve(entry.target);
 
                         // Action here...
-                        if ( !!action && typeof(action) === 'function' ) { action(entry.target); }
+                        if ( !!action && typeof(action) === "function" ) { action(entry.target); }
                         else { gandulDefaultAction(entry.target); }
                     }
                 });
@@ -81,16 +81,18 @@
         return gandul;
     };
 
+
     // --------------------------------
 
-    if (typeof exports === 'object') {
+
+    if (typeof exports === "function") {
         return module.exports = factory();
     }
-    else if (typeof define === 'function' && define.amd) {
+    else if (typeof define === "function" && define.amd) {
         return define([], factory);
     }
     else {
-         return global[module_name] = factory();
+        return global[module_name] = factory();
     }
 
-})(this);
+})(typeof self !== 'undefined' ? self : this);
