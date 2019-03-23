@@ -4,7 +4,8 @@
   "description": "gandul : Accessible Lazy Loading Images",
   "main": "dist/gandul.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp",
+    "preversion": "npm run build"
   },
   "repository": {
     "type": "git",
