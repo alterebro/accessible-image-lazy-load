@@ -5,7 +5,8 @@
   "main": "dist/gandul.min.js",
   "scripts": {
     "build": "gulp",
-    "version": "npm run build && git add -A dist/"
+    "version": "npm run build && git add -A dist/",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
