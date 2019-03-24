@@ -1,38 +1,37 @@
-<img src="gandul.png" alt="gandul" width="128" />
+<p style="margin: 20px;"><img src="gandul.png" alt="gandul" width="148" /></p>
 
-# **gandul!** (accessible-image-lazy-load)
+# **gandul!** 😴 (accessible-image-lazy-load)
 
-- [About **gandul**](#intro) 😴
+[![MIT license](https://img.shields.io/github/license/alterebro/accessible-image-lazy-load.svg)](http://opensource.org/licenses/MIT) [![NPM Version](https://img.shields.io/npm/v/accessible-image-lazy-load.svg)](https://www.npmjs.com/package/accessible-image-lazy-load) [![File Size](https://img.shields.io/github/size/alterebro/accessible-image-lazy-load/dist/gandul.min.js.svg)](https://github.com/alterebro/accessible-image-lazy-load/blob/master/dist/gandul.min.js) [![Twitter](https://img.shields.io/twitter/follow/alterebro.svg)](https://twitter.com/alterebro)
+
+- [About gandul](#intro)
 - [How to use it](#howto)
 - [Image attributes](#attributes)
 - [Options](#options)
-- [Download](#download)
 
 ---
 
 ## Accessible lazy loading images <a name="intro"></a>
 
-**gandul** 😴 is a script that adds a different approach on lazy loading focusing on accessibility. Most existing options work by either making you drop the `src` attribute of the image or, making you create a base64 data / low resolution blured alternative version of the image, or also including the img element into a `<noscript>`. This could be hacky and verbose and the main issue is that alters the semantics of the original element.
+**gandul** 😴 is a lightweight javascritp module that adds a different approach on lazy loading focusing on accessibility. Most existing options work by either making you drop the `src` attribute of the image or, making you create a base64 data / low resolution blurred alternative version of the image, or also including the img element into a `<noscript>` tag. This could be hacky and verbose and the main issue with it is that alters the semantics of the original element.
 
-In order to avoid that **gandul** 😴 works by taking an anchor hyperlink `<a>` as the data source of the image to be loaded and transforms it into a `<img>` element. This way you don't lose the reference to the image you want to show and, in case there is no JavaScript, your image will still be accessible by users and crawlers.
+In order to avoid that, **gandul** 😴 works by taking a common anchor hyperlink `<a>` as the data source of the image to be loaded and transforms it into a `<img>` element. This way you don't lose the reference to the image you want to show and, in case there's no JavaScript, your image will still be accessible by users and crawlers.
 
-**For example, if you write this:**
+#### Basic Example :
 
 ```html
+<!-- How your HTML will look like: -->
 <a href="http://placekitten.com/320/180" class="gandul">Nice kitten</a>
-```
 
-**You'll get this:**
-
-```html
+<!-- What the gandul script will output : -->
 <img src="http://placekitten.com/320/180" class="gandul" alt="Nice kitten" />
 ```
 
 <table>
 <thead>
     <tr>  
-        <th>HTML input</th>
-        <th>gandul 😴 output</th>
+        <th>HTML Input</th>
+        <th>gandul 😴 Output</th>
     </tr>  
 </thead>
 <tbody>
@@ -49,29 +48,35 @@ In order to avoid that **gandul** 😴 works by taking an anchor hyperlink `<a>`
 
 ## How to use it <a name="howto"></a>
 
-You simply have to include the `gandul.js` file on your page, write a normal anchor hyperlink with the `gandul` class (`<a class="gandul">`), and call the gandul function after the elements to transform have been laoded from your JavaScript code.
+#### 1. Download the script
+
+You have multiple options to get gandul 😴 ( [gandul.min.js](dist/gandul.min.js) ):
+
+- Via [NPM](https://www.npmjs.com/package/accessible-image-lazy-load) : `npm i accessible-image-lazy-load`
+- By cloning the repository : `git clone https://github.com/alterebro/accessible-image-lazy-load.git`
+- By downloading the project : [Download ZIP](https://github.com/alterebro/accessible-image-lazy-load/archive/master.zip)
+- From the jsDelivr CDN : [`cdn.jsdelivr.net/gh/alterebro/accessible-image-lazy-load/dist/gandul.min.js`](https://cdn.jsdelivr.net/gh/alterebro/accessible-image-lazy-load/dist/gandul.min.js)
+
+
+#### 2. Get it working
+
+Write an anchor hyperlink with the reference to your image and set the class gandul on it (`<a class="gandul">`). then, include and call the script :
 
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>gandul!</title>
-</head>
-<body>
-	<a href="http://placekitten.com/200/200" class="gandul">Nice kitten</a>
-	<script src="path/to/script/gandul.min.js"></script>
-	<script>gandul();</script>
-</body>
-</html>
+<!-- How a gandul image reference looks like -->
+<a href="http://placekitten.com/200/200" class="gandul">Nice kitten</a>
+
+<!-- Include and call the script -->
+<script src="//cdn.jsdelivr.net/gh/alterebro/accessible-image-lazy-load/dist/gandul.min.js"></script>
+<script>gandul();</script>
 ```
 
 ## Image Attributes <a name="attributes"></a>
 
-**gandul** 😴 will take all the existing attributes on the `<a>` element and they will be passed to the newly created `<img>` with a few peculiarities. As `<a>` elements don't have `srcset`, `sizes`, `width`... attributes, those will be passed as data attributes. Below you can see the equivalences table and one example:
+**gandul** 😴 will take all the existing attributes on the `<a>` element and they will be passed to the newly created `<img>` with a few peculiarities, as `<a>` elements don't have `srcset`, `sizes`, `width`... attributes, those will be passed as data attributes. Right below you can see the equivalences table and some examples:
 
-| &lt;a&gt; attributes | &lt;img&gt; attributes equivalence  |
-|----------------------|-------------|
+| &lt;a&gt; attributes  | &lt;img&gt; attributes equivalence  |
+|-----------------------|-------------|
 | `data-srcset`    		| `srcset` 	|
 | `data-sizes`     		| `sizes`  	|
 | `data-width`     		| `width`  	|
@@ -79,32 +84,30 @@ You simply have to include the `gandul.js` file on your page, write a normal anc
 | Anchor hyperlink inner text. | `alt` 	|
 
 
+#### Fully responsive image example:
+
 ```html
-<!-- You would have to write your hyperlink as it follows : -->
+<!-- Write your hyperlink HTML as it follows : -->
 <a href="http://placekitten.com/800/400"
    data-srcset="http://placekitten.com/320/160 320w,
              http://placekitten.com/480/240 480w,
              http://placekitten.com/800/400 800w"
-   data-sizes="(max-width: 320px) 280px,
-            (max-width: 480px) 440px,
-            800px"
+   data-sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
    class="gandul">Nice kitten</a>
 
-<!-- If you want to have a responsive image like this one: -->
+<!-- To get a responsive image output like this one: -->
 <img src="http://placekitten.com/800/400"
 	 srcset="http://placekitten.com/320/160 320w,
              http://placekitten.com/480/240 480w,
              http://placekitten.com/800/400 800w"
-     sizes="(max-width: 320px) 280px,
-            (max-width: 480px) 440px,
-            800px"
+     sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
      class="gandul"
      alt="Nice kitten" />
 
 ```
----
 
-In case you only want to set the width :
+
+#### Setting just the width attribute of an image :
 
 ```html
 <!-- What you'll write: -->
@@ -113,28 +116,34 @@ In case you only want to set the width :
 <!-- What you'll get : -->
 <img src="http://placekitten.com/800/400" width="800" alt="Nice kitten" />
 ```
----
 
-Any other attributes will remain as they are, that means that if you already set or you need on the `<img>` an `id` or different `classes`, those will be passed through the **gandul** 😴 script :
+
+#### Any other attributes :
+
+Any other attributes will remain as they are, which means that if you already set or you need on the `<img>` an `id` or different `classes`, those will be passed through the **gandul** 😴 script :
 
 ```html
 <!-- input -->
 <a href="http://placekitten.com/800/400" id="cat" class="nice kitten gandul">Nice kitten</a>
 
 <!-- gandul output -->
-<img src="http://placekitten.com/800/400" id="cat" class="nice kitten gandul">Nice kitten</a>
+<img src="http://placekitten.com/800/400" id="cat" class="nice kitten gandul" alt="Nice kitten" />
 ```
 
 ## Options <a name="options"></a>
 
 Some parameters can be send to the **gandul** 😴 function:
 
-- `target (@string)` : a selector targeting all the elements where you want the script to get executed. It defaults to all anchor hyperlinks with the classname *gandul* : `"a.gandul"`
-- `opts (@object)` : an options object containing the fields used by the `IntersectionObserver` constructor
+```javascript
+gandul(target, opts, action);
+```
+
+- **`target (@string)`** : a selector targeting all the elements where you want the script to get executed. It defaults to all anchor hyperlinks with the classname *gandul* : `"a.gandul"`
+- **`opts (@object)`** : an options object containing the fields used by the `IntersectionObserver` constructor
     * `root` : element used as viewport of the target. Default value is the brwoser viewport (`null`)
     * `rootMargin` : margin of root element to grow or shrink the intersection. Default value takes an extra 50 pixels above and below the viewport (`"50px 0px 50px 0px"`).
     * `threshold` : percentage of target visibility to trigger the action. Default is `0`.
-- `action (@function)` : callback function executed when the target intersects the given viewport, this defaults to the **gandul** 😴 behaviour but it can be overwritten using this parameter.
+- **`action (@function)`** : A callback function to be executed when the target intersects the given viewport, this defaults to the **gandul** 😴 behaviour but it can be overwritten using this parameter.
 
 The following example makes use of some of these options, it will target all hyperlinks with the class `gandul-hyperlink`, will activate when 50% of the target element is visible and the function attached will change the inner HTML of the link to read the string — '**Gandul!**'.
 
@@ -143,10 +152,6 @@ gandul('a.gandul-hyperlink', { threshold: .5 }, function(el) {
     el.innerHTML = 'Gandul!';
 });
 ```
-
-## Download <a name="download"></a>
-
-- You can download the minified version of the **gandul** 😴 script from this repo : [gandul.min.js](dist/gandul.min.js)
 
 ---
 
