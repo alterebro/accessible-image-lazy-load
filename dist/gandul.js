@@ -1,4 +1,4 @@
-/*! accessible-image-lazy-load v1.1.3 (c) 2019 Jorge Moreno, moro.es (@alterebro) https://github.com/alterebro/accessible-image-lazy-load#readme */
+/*! accessible-image-lazy-load v1.1.4 (c) 2019 Jorge Moreno, moro.es (@alterebro) https://github.com/alterebro/accessible-image-lazy-load#readme */
 "use strict";
 
 (function(global) {
