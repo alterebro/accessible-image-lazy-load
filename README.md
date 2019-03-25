@@ -14,7 +14,7 @@
 
 ## Accessible lazy loading images
 
-**gandul** 😴 is a lightweight javascritp module that adds a different approach on lazy loading focusing on accessibility. Most existing options work by either making you drop the `src` attribute of the image or, making you create a base64 data / low resolution blurred alternative version of the image, or also including the img element into a `<noscript>` tag. This could be hacky and verbose and the main issue with it is that alters the semantics of the original element.
+**gandul** 😴 is a lightweight javascript module that adds a different approach on lazy loading focusing on accessibility. Most existing options work by either making you drop the `src` attribute of the image or, making you create a base64 data / low resolution blurred alternative version of the image, or also including the img element into a `<noscript>` tag. This could be hacky and verbose and the main issue with it is that alters the semantics of the original element.
 
 In order to avoid that, **gandul** 😴 works by taking a common anchor hyperlink `<a>` as the data source of the image to be loaded and transforms it into a `<img>` element. This way you don't lose the reference to the image you want to show and, in case there's no JavaScript, your image will still be accessible by users and crawlers.
 

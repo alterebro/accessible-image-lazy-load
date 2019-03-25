@@ -68,15 +68,26 @@
                 });
             }
 
-            // Observer itself
-            const gandulObserver = new IntersectionObserver(gandulCallback, gandulOptions );
-
             // Get all elements to observe
             const gandulTarget = document.querySelectorAll(target);
-            [].forEach.call(
-                gandulTarget,
-                function(_target) { gandulObserver.observe(_target); }
-            );
+
+                // Filter out non IntersectionObesrver browsers
+                const _io = ('IntersectionObserver' in window &&
+                    'IntersectionObserverEntry' in window &&
+                    'intersectionRatio' in window.IntersectionObserverEntry.prototype &&
+                    'isIntersecting' in window.IntersectionObserverEntry.prototype
+                );
+
+                // Observer itself
+                const gandulObserver = (_io) ? new IntersectionObserver(gandulCallback, gandulOptions ) : false;
+
+                // Iterate over the items
+                [].forEach.call(
+                    gandulTarget,
+                    function(_target) {
+                        (_io) ? gandulObserver.observe(_target) : gandulDefaultAction(_target);
+                    }
+                );
 
             return !!gandulTarget.length;
         };

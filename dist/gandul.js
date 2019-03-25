@@ -56,10 +56,11 @@
                     }
                 });
             };
-            var gandulObserver = new IntersectionObserver(gandulCallback, gandulOptions);
             var gandulTarget = document.querySelectorAll(target);
+            var _io = "IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype && "isIntersecting" in window.IntersectionObserverEntry.prototype;
+            var gandulObserver = _io ? new IntersectionObserver(gandulCallback, gandulOptions) : false;
             [].forEach.call(gandulTarget, function(_target) {
-                gandulObserver.observe(_target);
+                _io ? gandulObserver.observe(_target) : gandulDefaultAction(_target);
             });
             return !!gandulTarget.length;
         };
