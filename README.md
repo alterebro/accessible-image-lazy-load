@@ -1,17 +1,18 @@
-<p style="margin: 20px;"><img src="gandul.png" alt="gandul" width="148" /></p>
+<img src="gandul.png" alt="gandul" width="148" />
 
 # **gandul!** 😴 (accessible-image-lazy-load)
 
 [![MIT license](https://img.shields.io/github/license/alterebro/accessible-image-lazy-load.svg)](http://opensource.org/licenses/MIT) [![NPM Version](https://img.shields.io/npm/v/accessible-image-lazy-load.svg)](https://www.npmjs.com/package/accessible-image-lazy-load) [![File Size](https://img.shields.io/github/size/alterebro/accessible-image-lazy-load/dist/gandul.min.js.svg)](https://github.com/alterebro/accessible-image-lazy-load/blob/master/dist/gandul.min.js) [![Twitter](https://img.shields.io/twitter/follow/alterebro.svg)](https://twitter.com/alterebro)
 
-- [About gandul](#intro)
-- [How to use it](#howto)
-- [Image attributes](#attributes)
+- [About gandul](#accessible-lazy-loading-images)
+- [How to use it](#how-to-use-it)
+- [Image attributes](#image-attributes)
 - [Options](#options)
+- [Development](#development)
 
 ---
 
-## Accessible lazy loading images <a name="intro"></a>
+## Accessible lazy loading images
 
 **gandul** 😴 is a lightweight javascritp module that adds a different approach on lazy loading focusing on accessibility. Most existing options work by either making you drop the `src` attribute of the image or, making you create a base64 data / low resolution blurred alternative version of the image, or also including the img element into a `<noscript>` tag. This could be hacky and verbose and the main issue with it is that alters the semantics of the original element.
 
@@ -46,7 +47,7 @@ In order to avoid that, **gandul** 😴 works by taking a common anchor hyperlin
 </tbody>
 </table>
 
-## How to use it <a name="howto"></a>
+## How to use it
 
 #### 1. Download the script
 
@@ -71,7 +72,7 @@ Write an anchor hyperlink with the reference to your image and set the class gan
 <script>gandul();</script>
 ```
 
-## Image Attributes <a name="attributes"></a>
+## Image Attributes
 
 **gandul** 😴 will take all the existing attributes on the `<a>` element and they will be passed to the newly created `<img>` with a few peculiarities, as `<a>` elements don't have `srcset`, `sizes`, `width`... attributes, those will be passed as data attributes. Right below you can see the equivalences table and some examples:
 
@@ -130,7 +131,7 @@ Any other attributes will remain as they are, which means that if you already se
 <img src="http://placekitten.com/800/400" id="cat" class="nice kitten gandul" alt="Nice kitten" />
 ```
 
-## Options <a name="options"></a>
+## Options
 
 Some parameters can be send to the **gandul** 😴 function:
 
@@ -151,6 +152,23 @@ The following example makes use of some of these options, it will target all hyp
 gandul('a.gandul-hyperlink', { threshold: .5 }, function(el) {
     el.innerHTML = 'Gandul!';
 });
+```
+
+---
+
+## Development
+
+```sh
+# Clone the repo
+$ git clone https://github.com/alterebro/accessible-image-lazy-load.git
+$ cd accessible-image-lazy-load/
+
+# Install dependencies
+$ npm install
+
+# Build (any of the below will do it)
+$ npm run build
+$ gulp
 ```
 
 ---
