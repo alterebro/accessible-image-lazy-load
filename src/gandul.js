@@ -36,7 +36,13 @@
                 let _img = document.createElement("img");
                     _img.alt = _truncateStr(el.innerText);
                     _img.addEventListener("load", function(e) {
-                        this.classList.add("gandul-active");
+
+                        window.setTimeout(() => {
+                            this.classList.add("gandul-active");
+                        }, 50);
+
+                        // Callback time
+                        if ( !!action && typeof(action) === "function" ) { action(_img); }
                     });
 
                 let _atts = el.attributes;
@@ -45,6 +51,7 @@
                 }
 
                 _parent.replaceChild(_img, el);
+
             }
 
             // Observer callback
@@ -54,12 +61,9 @@
 
                     if (entry.isIntersecting) {
 
-                        // Stop observing element
+                        // Stop observing element and execute the action
                         gandulObserver.unobserve(entry.target);
-
-                        // Action here...
-                        if ( !!action && typeof(action) === "function" ) { action(entry.target); }
-                        else { gandulDefaultAction(entry.target); }
+                        gandulDefaultAction(entry.target);
                     }
                 });
             }

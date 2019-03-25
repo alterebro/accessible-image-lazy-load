@@ -33,25 +33,26 @@
                 var _parent = el.parentNode;
                 var _img = document.createElement("img");
                 _img.alt = _truncateStr(el.innerText);
+                _img.addEventListener("load", function(e) {
+                    var _this = this;
+                    window.setTimeout(function() {
+                        _this.classList.add("gandul-active");
+                    }, 50);
+                    if (!!action && typeof action === "function") {
+                        action(_img);
+                    }
+                });
                 var _atts = el.attributes;
                 for (var i = 0; i < _atts.length; i++) {
                     _img.setAttribute(_replaceAttr(_atts[i].nodeName), _atts[i].nodeValue);
                 }
                 _parent.replaceChild(_img, el);
-                console.log(_img);
-                _img.addEventListener("load", function(e) {
-                    console.log(e, this);
-                });
             };
             var gandulCallback = function gandulCallback(entries) {
                 [].forEach.call(entries, function(entry) {
                     if (entry.isIntersecting) {
                         gandulObserver.unobserve(entry.target);
-                        if (!!action && typeof action === "function") {
-                            action(entry.target);
-                        } else {
-                            gandulDefaultAction(entry.target);
-                        }
+                        gandulDefaultAction(entry.target);
                     }
                 });
             };

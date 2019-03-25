@@ -144,13 +144,13 @@ gandul(target, opts, action);
     * `root` : element used as viewport of the target. Default value is the brwoser viewport (`null`)
     * `rootMargin` : margin of root element to grow or shrink the intersection. Default value takes an extra 50 pixels above and below the viewport (`"50px 0px 50px 0px"`).
     * `threshold` : percentage of target visibility to trigger the action. Default is `0`.
-- **`action (@function)`** : A callback function to be executed when the target intersects the given viewport, this defaults to the **gandul** 😴 behaviour but it can be overwritten using this parameter.
+- **`action (@function)`** : A callback function to be executed when the image finishes loading after the target has intersected the given viewport, it comes with image element itself as first parameter (`function(img){ /* console.log(img) */ }`). The default action when image loads is to attach to the `img` element the class named `'gandul-active'`.
 
-The following example makes use of some of these options, it will target all hyperlinks with the class `gandul-hyperlink`, will activate when 50% of the target element is visible and the function attached will change the inner HTML of the link to read the string — '**Gandul!**'.
+The following example makes use of some of these options, it will target all hyperlinks with the class `gandul-hyperlink`, will be activated when 50% of the target element is visible and the function used as callback will change the created image border style as defined below:
 
 ```javascript
-gandul('a.gandul-hyperlink', { threshold: .5 }, function(el) {
-    el.innerHTML = 'Gandul!';
+gandul('a.gandul-hyperlink', { threshold: .5 }, function(img) {
+    img.style.border = 'solid red 10px';
 });
 ```
 
