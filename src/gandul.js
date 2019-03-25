@@ -34,18 +34,17 @@
                 // Default Action
                 let _parent = el.parentNode;
                 let _img = document.createElement("img");
-                _img.alt = _truncateStr(el.innerText);
+                    _img.alt = _truncateStr(el.innerText);
+                    _img.addEventListener("load", function(e) {
+                        this.classList.add("gandul-active");
+                    });
 
                 let _atts = el.attributes;
                 for ( let i = 0; i < _atts.length; i++ ) {
                     _img.setAttribute( _replaceAttr(_atts[i].nodeName), _atts[i].nodeValue );
                 }
 
-                // _parent.insertBefore(_img, el);
-                // _parent.removeChild(el);
                 _parent.replaceChild(_img, el);
-
-                window.setTimeout(function() { _img.classList.add("gandul-active") }, 500);
             }
 
             // Observer callback

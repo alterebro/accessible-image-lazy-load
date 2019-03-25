@@ -38,9 +38,10 @@
                     _img.setAttribute(_replaceAttr(_atts[i].nodeName), _atts[i].nodeValue);
                 }
                 _parent.replaceChild(_img, el);
-                window.setTimeout(function() {
-                    _img.classList.add("gandul-active");
-                }, 500);
+                console.log(_img);
+                _img.addEventListener("load", function(e) {
+                    console.log(e, this);
+                });
             };
             var gandulCallback = function gandulCallback(entries) {
                 [].forEach.call(entries, function(entry) {
