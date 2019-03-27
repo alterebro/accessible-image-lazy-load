@@ -69,7 +69,7 @@ Write an anchor hyperlink with the reference to your image and set the class gan
 <a href="http://placekitten.com/200/200" class="gandul">Nice kitten</a>
 
 <!-- Include and call the script -->
-<script src="//cdn.jsdelivr.net/gh/alterebro/accessible-image-lazy-load/dist/gandul.min.js"></script>
+<script src="https://unpkg.com/accessible-image-lazy-load"></script>
 <script>gandul();</script>
 ```
 

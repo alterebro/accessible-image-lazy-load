@@ -2,46 +2,222 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>gandul examples</title>
-    <style media="screen">
-        p { height: 480px; background: #eee; overflow: hidden; }
-        img.gandul, img.gandul-hyperlink { opacity: 0; transition: all .5s linear; }
-        img.gandul-active { opacity: 1; }
-    </style>
+    <title>gandul, accessible image lazy loading examples</title>
+<style media="screen">
+html, body, h1, h2, h3, p, pre {
+    margin: 0;
+    padding: 0;
+}
+html {
+    box-sizing: border-box;
+	font-size: 62.5%;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.6em;
+    line-height: 1.7;
+    width: 90%;
+    max-width: 96rem;
+    margin: 4rem auto;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+	background-repeat: no-repeat;
+}
+a {
+    color: #069;
+    text-decoration: none;
+}
+a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+header h1 {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.4;
+}
+header p { margin: 1rem 0 2rem; }
+h3 {
+    font-size: 24px;
+    margin: 0 0 2rem;
+    line-height: 1.4;
+}
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+	background: none;
+	border: none;
+	border-top: dotted #333 1px;
+	margin: 4rem 0;
+}
+section { margin: 0 0 2rem; }
+section > div {
+    min-height: 24rem;
+    box-shadow: inset 0 0 0 1px #eee;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+section > pre { width: 100%; }
+footer {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+
+img.gandul, img.gandul-hyperlink {
+    display: inline-block;
+    border-radius: 3px;
+    max-width: 100%;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+img.gandul-active { opacity: 1; }
+
+
+
+/* highlight.js */
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 2rem;
+    font-family: "Andale Mono", "Monaco", "Lucida Console", "Menlo", "Consolas", "Roboto Mono", "Liberation Mono", monospace;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    box-shadow: inset 0 0 0 1px #eee;
+}
+.hljs, .hljs-subst { color: #555 }
+.hljs-attr { color: #06f; font-weight: bold; }
+.hljs-comment { color: #999; font-style: italic; }
+.hljs-keyword, .hljs-attribute, .hljs-selector-tag, .hljs-meta-keyword, .hljs-doctag, .hljs-name { color: #069; font-weight: bold }
+.hljs-title, .hljs-section { color: #880000; font-weight: bold }
+.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion { color: #09f; }
+.hljs-regexp, .hljs-symbol, .hljs-variable, .hljs-template-variable, .hljs-link, .hljs-selector-attr, .hljs-selector-pseudo { color: #BC6060 }
+.hljs-literal { color: #78A960 }
+.hljs-built_in, .hljs-bullet, .hljs-code, .hljs-addition { color: #90f; font-weight: bold; }
+.hljs-meta { color: #1f7199 }
+.hljs-meta-string { color: #4d99bf }
+.hljs-emphasis { font-style: italic }
+.hljs-strong { font-weight: bold }
+</style>
 </head>
 <body>
     <header>
-        <h1>Accessible lazy loading images : 😴 <strong>gandul</strong> examples</h1>
+        <h1><strong>gandul</strong> : <a href="https://github.com/alterebro/accessible-image-lazy-load">accessible image lazy loading</a></h1>
+        <p>
+            <a href="http://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/alterebro/accessible-image-lazy-load.svg" alt="MIT license"></a>
+            <a href="https://www.npmjs.com/package/accessible-image-lazy-load"><img src="https://img.shields.io/npm/v/accessible-image-lazy-load.svg" alt="NPM Version"></a>
+            <a href="https://github.com/alterebro/accessible-image-lazy-load/blob/master/dist/gandul.min.js"><img src="https://img.shields.io/github/size/alterebro/accessible-image-lazy-load/dist/gandul.min.js.svg" alt="File Size"></a>
+            <a href="https://twitter.com/alterebro"><img src="https://img.shields.io/twitter/follow/alterebro.svg" alt="Twitter"></a>
+        </p>
         <hr />
     </header>
 
     <main>
         <h3>Width attribute on the images</h3>
-        <p><a href="../gandul.png" data-width="256" class="gandul">gandul!</a></p>
-        <p><a href="http://placekitten.com/640/480" data-width="320" class="gandul">Nice kitten</a></p>
-        <p><a href="http://placekitten.com/960/720" data-width="320" class="gandul">Nice kitten</a></p>
+        <section>
+            <div>
+                <p><a href="http://placekitten.com/640/480" data-width="320" class="gandul">Nice kitten</a></p>
+            </div>
+            <pre><code class="html">&lt;a href="http://placekitten.com/640/480" data-width="320" class="gandul"&gt;Nice kitten&lt;/a&gt;&lt;/p&gt;</code></pre>
+        </section>
+        <section>
+            <div>
+                <p><a href="http://placekitten.com/960/720" data-width="320" class="gandul">Nice kitten</a></p>
+            </div>
+            <pre><code class="html">&lt;p&gt;&lt;a href="http://placekitten.com/960/720" data-width="320" class="gandul"&gt;Nice kitten&lt;/a&gt;&lt;/p&gt;</code></pre>
+        </section>
+        <section>
+            <div>
+                <p>
+                    <a href="../gandul.png" data-width="128" class="gandul">gandul!</a>
+                    <a href="../gandul.png" data-width="128" class="gandul">gandul!</a>
+                    <a href="../gandul.png" data-width="128" class="gandul">gandul!</a>
+                </p>
+            </div>
+            <pre><code class="html">&lt;p&gt;
+    &lt;a href="../gandul.png" data-width="128" class="gandul"&gt;gandul!&lt;/a&gt;
+    &lt;a href="../gandul.png" data-width="128" class="gandul"&gt;gandul!&lt;/a&gt;
+    &lt;a href="../gandul.png" data-width="128" class="gandul"&gt;gandul!&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+        </section>
+
         <hr />
 
         <h3>Responsive image (sizes &amp; srcset)</h3>
-        <p>
-        <a href="http://placekitten.com/800/400"
-           data-srcset="http://placekitten.com/320/160 320w,
-                     http://placekitten.com/480/240 480w,
-                     http://placekitten.com/800/400 800w"
-           data-sizes="(max-width: 320px) 280px,
-                    (max-width: 480px) 440px,
-                    800px"
-           class="gandul">Nice kitten</a>
-        </p>
-        <hr />
+        <section>
+            <div>
+                <p>
+                    <a href="http://placekitten.com/800/400"
+                       data-srcset="http://placekitten.com/320/160 320w,
+                                 http://placekitten.com/480/240 480w,
+                                 http://placekitten.com/800/400 800w"
+                       data-sizes="(max-width: 320px) 280px,
+                                (max-width: 480px) 440px,
+                                800px"
+                       class="gandul">Nice kitten</a>
+                </p>
+            </div>
+            <pre><code class="html">&lt;p&gt;
+    &lt;a href="http://placekitten.com/800/400"
+       data-srcset="http://placekitten.com/320/160 320w,
+                 http://placekitten.com/480/240 480w,
+                 http://placekitten.com/800/400 800w"
+       data-sizes="(max-width: 320px) 280px,
+                (max-width: 480px) 440px,
+                800px"
+       class="gandul"&gt;Nice kitten&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+        </section>
 
-        <h3>Images with id and class attributes</h3>
-        <p><a href="http://placekitten.com/600/400" id="cat" class="nice kitten gandul">Nice kitten</a></p>
-        <p><a href="http://placekitten.com/500/500" id="kitty" class="square kitty gandul">Another Nice kitten</a></p>
+        <hr />
+        <h3>Images with <code>id</code> and <code>class</code> attributes</h3>
+        <section>
+            <div>
+                <p><a href="http://placekitten.com/600/400" id="cat" class="nice kitten gandul">Nice kitten</a></p>
+            </div>
+            <pre><code class="html">&lt;p&gt;&lt;a href="http://placekitten.com/600/400" id="cat" class="nice kitten gandul"&gt;Nice kitten&lt;/a&gt;&lt;/p&gt;</code></pre>
+        </section>
+        <section>
+            <div>
+                <p><a href="http://placekitten.com/500/500" id="kitty" class="square kitty gandul">Another Nice kitten</a></p>
+            </div>
+            <pre><code class="html">&lt;p&gt;
+    &lt;a href="http://placekitten.com/500/500" id="kitty" class="square kitty gandul"&gt;Another Nice kitten&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+        </section>
+
+
+
         <hr />
 
         <h3>Element with all options and callback action when image load finishes :</h3>
-        <p><a href="http://placekitten.com/800/400" class="gandul-hyperlink">Cat image</a></p>
+
+        <section>
+            <div>
+                <p><a href="http://placekitten.com/1200/600" class="gandul-hyperlink">Cat image</a></p>
+            </div>
+            <pre><code class="html">&lt;p&gt;&lt;a href="http://placekitten.com/1200/600" class="gandul-hyperlink"&gt;Cat image&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- gandul --&gt;
+&lt;script&gt;
+gandul('a.gandul-hyperlink', { threshold: .5 }, function(el) {
+    el.style.border = 'solid #333 20px';
+    console.log(el);
+});
+&lt;/script&gt;</code></pre>
+        </section>
+
+
         <hr />
     </main>
 
@@ -49,8 +225,13 @@
         <div><a href="https://github.com/alterebro/accessible-image-lazy-load#readme"><strong>gandul</strong> 😴 : accessible-image-lazy-load</a></div>
     </footer>
 
-<script src="../dist/gandul.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" charset="utf-8"></script>
+<script src="https://unpkg.com/accessible-image-lazy-load" charset="utf-8"></script>
 <script>
+// highlight code
+hljs.initHighlightingOnLoad();
+
+// gandul stuff
 let a = gandul();
 let b = gandul('a.gandul-hyperlink', { threshold: .5 }, function(el) {
     el.style.border = 'solid #333 20px';
