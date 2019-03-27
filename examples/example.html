@@ -112,6 +112,8 @@ img.gandul-active { opacity: 1; }
 </head>
 <body>
     <header>
+        <p><img src="../gandul.png" width="128" alt="gandul!" /></p>
+
         <h1><strong>gandul</strong> : <a href="https://github.com/alterebro/accessible-image-lazy-load">accessible image lazy loading</a></h1>
         <p>
             <a href="http://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/alterebro/accessible-image-lazy-load.svg" alt="MIT license"></a>
@@ -211,7 +213,7 @@ img.gandul-active { opacity: 1; }
 &lt;!-- gandul --&gt;
 &lt;script&gt;
 gandul('a.gandul-hyperlink', { threshold: .5 }, function(el) {
-    el.style.border = 'solid #333 20px';
+    el.style.border = 'solid #fff 20px';
     console.log(el);
 });
 &lt;/script&gt;</code></pre>
@@ -227,6 +229,7 @@ gandul('a.gandul-hyperlink', { threshold: .5 }, function(el) {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" charset="utf-8"></script>
 <script src="https://unpkg.com/accessible-image-lazy-load" charset="utf-8"></script>
+<!-- <script src="../src/gandul.js" charset="utf-8"></script> -->
 <script>
 // highlight code
 hljs.initHighlightingOnLoad();
@@ -234,12 +237,14 @@ hljs.initHighlightingOnLoad();
 // gandul stuff
 let a = gandul();
 let b = gandul('a.gandul-hyperlink', { threshold: .5 }, function(el) {
-    el.style.border = 'solid #333 20px';
+    el.style.border = 'solid #fff 20px';
     console.log(el);
 });
+let c = gandul('a.non-existant');
 
 console.log(a);
 console.log(b);
+console.log(c); // It should return false
 
 </script>
 </body>
