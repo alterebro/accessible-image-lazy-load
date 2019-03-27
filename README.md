@@ -56,8 +56,9 @@ You have multiple options to get gandul 😴 ( [gandul.min.js](dist/gandul.min.j
 - Via [NPM](https://www.npmjs.com/package/accessible-image-lazy-load) : `npm i accessible-image-lazy-load`
 - By cloning the repository : `git clone https://github.com/alterebro/accessible-image-lazy-load.git`
 - By downloading the project : [Download ZIP](https://github.com/alterebro/accessible-image-lazy-load/archive/master.zip)
-- From the jsDelivr CDN : [`cdn.jsdelivr.net/gh/alterebro/accessible-image-lazy-load/dist/gandul.min.js`](https://cdn.jsdelivr.net/gh/alterebro/accessible-image-lazy-load/dist/gandul.min.js)
-
+- You can also include it from a CDN :
+    * **jsDelivr** : [`cdn.jsdelivr.net/gh/alterebro/accessible-image-lazy-load/dist/gandul.min.js`](https://cdn.jsdelivr.net/gh/alterebro/accessible-image-lazy-load/dist/gandul.min.js)
+    * **UNPKG** : [`unpkg.com/accessible-image-lazy-load`](https://unpkg.com/accessible-image-lazy-load)
 
 #### 2. Get it working
 
