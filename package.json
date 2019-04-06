@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/alterebro/accessible-image-lazy-load/issues"
   },
-  "homepage": "https://github.com/alterebro/accessible-image-lazy-load#readme",
+  "homepage": "https://moro.es/projects/gandul-accessible-image-lazy-loading/",
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.1",

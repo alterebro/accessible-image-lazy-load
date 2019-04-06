@@ -9,6 +9,7 @@
 - [Image attributes](#image-attributes)
 - [Options](#options)
 - [Examples](https://codepen.io/alterebro/full/eozxwd)
+- [More Info](https://moro.es/projects/gandul-accessible-image-lazy-loading/)
 - [Development](#development)
 
 ---
@@ -175,4 +176,4 @@ $ gulp
 
 ---
 
-*Jorge Moreno — [@alterebro](https://twitter.com/alterebro)*
+**[Gandul. Accessible Image Lazy loading](https://moro.es/projects/gandul-accessible-image-lazy-loading/)**<br>*Jorge Moreno — [@alterebro](https://twitter.com/alterebro)*
