@@ -1,6 +1,6 @@
 <img src="gandul.png" alt="gandul" width="148" />
 
-# **gandul!** 😴 (accessible-image-lazy-load)
+# **[gandul!](https://moro.es/projects/gandul-accessible-image-lazy-loading/)** 😴 (accessible-image-lazy-load)
 
 [![MIT license](https://img.shields.io/github/license/alterebro/accessible-image-lazy-load.svg)](http://opensource.org/licenses/MIT) [![NPM Version](https://img.shields.io/npm/v/accessible-image-lazy-load.svg)](https://www.npmjs.com/package/accessible-image-lazy-load) [![File Size](https://img.shields.io/github/size/alterebro/accessible-image-lazy-load/dist/gandul.min.js.svg)](https://github.com/alterebro/accessible-image-lazy-load/blob/master/dist/gandul.min.js) [![Twitter](https://img.shields.io/twitter/follow/alterebro.svg)](https://twitter.com/alterebro)
 
@@ -8,9 +8,9 @@
 - [How to use it](#how-to-use-it)
 - [Image attributes](#image-attributes)
 - [Options](#options)
-- [Examples](https://codepen.io/alterebro/full/eozxwd)
-- [More Info](https://moro.es/projects/gandul-accessible-image-lazy-loading/)
 - [Development](#development)
+- [❐ &nbsp; *Examples*](https://codepen.io/alterebro/full/eozxwd)
+- [❐ &nbsp; *More Info*](https://moro.es/projects/gandul-accessible-image-lazy-loading/)
 
 ---
 
