@@ -8,6 +8,7 @@
 - [How to use it](#how-to-use-it)
 - [Image attributes](#image-attributes)
 - [Options](#options)
+- [Examples](https://codepen.io/alterebro/full/eozxwd)
 - [Development](#development)
 
 ---
