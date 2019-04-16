@@ -1,4 +1,4 @@
-/*! accessible-image-lazy-load v1.2.1 (c) 2019 Jorge Moreno, moro.es (@alterebro) https://moro.es/projects/gandul-accessible-image-lazy-loading/ */
+/*! accessible-image-lazy-load v1.3.0 (c) 2019 Jorge Moreno, moro.es (@alterebro) https://moro.es/projects/gandul-accessible-image-lazy-loading/ */
 "use strict";
 
 (function(global) {
