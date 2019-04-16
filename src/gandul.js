@@ -20,6 +20,7 @@
                 let _replaceAttr = function(input) {
                     let _attr = {
                         "href" : "src",
+                        "data-href" : "src",
                         "data-srcset" : "srcset",
                         "data-sizes" : "sizes",
                         "data-width" : "width"

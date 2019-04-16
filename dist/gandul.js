@@ -19,6 +19,7 @@
                 var _replaceAttr = function _replaceAttr(input) {
                     var _attr = {
                         href: "src",
+                        "data-href": "src",
                         "data-srcset": "srcset",
                         "data-sizes": "sizes",
                         "data-width": "width"

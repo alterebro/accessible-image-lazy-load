@@ -79,13 +79,17 @@ Write an anchor hyperlink with the reference to your image and set the class gan
 
 **gandul** 😴 will take all the existing attributes on the `<a>` element and they will be passed to the newly created `<img>` with a few peculiarities, as `<a>` elements don't have `srcset`, `sizes`, `width`... attributes, those will be passed as data attributes. Right below you can see the equivalences table and some examples:
 
+*In case you want to apply **gandul** to a different HTML element than a hyperlink (`<a>`) the image source will be taken from the `data-href` attribute*
+
+
 | &lt;a&gt; attributes  | &lt;img&gt; attributes equivalence  |
 |-----------------------|-------------|
+| Anchor hyperlink inner text. | `alt` 	|
+| `href`     			| `src`  	|
+| `data-href`     		| `src`  	|
 | `data-srcset`    		| `srcset` 	|
 | `data-sizes`     		| `sizes`  	|
 | `data-width`     		| `width`  	|
-| `href`     			| `src`  	|
-| Anchor hyperlink inner text. | `alt` 	|
 
 
 #### Fully responsive image example:
