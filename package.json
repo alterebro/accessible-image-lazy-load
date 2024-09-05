@@ -33,7 +33,7 @@
     "@babel/preset-env": "^7.10.4",
     "gulp": "^5.0.0",
     "gulp-babel": "^8.0.0",
-    "gulp-header": "^2.0.9",
+    "gulp-header": "^1.8.9",
     "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.2"
   }

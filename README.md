@@ -24,10 +24,10 @@ In order to avoid that, **gandul** 😴 works by taking a common anchor hyperlin
 
 ```html
 <!-- How your HTML will look like: -->
-<a href="http://placekitten.com/320/180" class="gandul">Nice kitten</a>
+<a href="http://picsum.photos/320/180" class="gandul">Nice kitten</a>
 
 <!-- What the gandul script will output : -->
-<img src="http://placekitten.com/320/180" class="gandul" alt="Nice kitten" />
+<img src="http://picsum.photos/320/180" class="gandul" alt="Nice kitten" />
 ```
 
 <table>
@@ -39,12 +39,12 @@ In order to avoid that, **gandul** 😴 works by taking a common anchor hyperlin
 </thead>
 <tbody>
     <tr>
-        <td><code>&lt;a href="http://placekitten.com/320/180" class="gandul"&gt;Nice kitten&lt;/a&gt;</code></td>
-        <td><code>&lt;img src="http://placekitten.com/320/180" class="gandul" alt="Nice kitten" /&gt;</code></td>
+        <td><code>&lt;a href="http://picsum.photos/320/180" class="gandul"&gt;Nice kitten&lt;/a&gt;</code></td>
+        <td><code>&lt;img src="http://picsum.photos/320/180" class="gandul" alt="Nice kitten" /&gt;</code></td>
     </tr>
     <tr>
-        <td><a href="http://placekitten.com/320/180" class="gandul">Nice kitten</a></td>
-        <td><img src="http://placekitten.com/320/180" class="gandul" alt="Nice kitten" /></td>
+        <td><a href="http://picsum.photos/320/180" class="gandul">Nice kitten</a></td>
+        <td><img src="http://picsum.photos/320/180" class="gandul" alt="Nice kitten" /></td>
     </tr>
 </tbody>
 </table>
@@ -68,7 +68,7 @@ Write an anchor hyperlink with the reference to your image and set the class gan
 
 ```html
 <!-- How a gandul image reference looks like -->
-<a href="http://placekitten.com/200/200" class="gandul">Nice kitten</a>
+<a href="http://picsum.photos/200/200" class="gandul">Nice kitten</a>
 
 <!-- Include and call the script -->
 <script src="https://unpkg.com/accessible-image-lazy-load"></script>
@@ -96,18 +96,18 @@ Write an anchor hyperlink with the reference to your image and set the class gan
 
 ```html
 <!-- Write your hyperlink HTML as it follows : -->
-<a href="http://placekitten.com/800/400"
-   data-srcset="http://placekitten.com/320/160 320w,
-             http://placekitten.com/480/240 480w,
-             http://placekitten.com/800/400 800w"
+<a href="http://picsum.photos/800/400"
+   data-srcset="http://picsum.photos/320/160 320w,
+             http://picsum.photos/480/240 480w,
+             http://picsum.photos/800/400 800w"
    data-sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
    class="gandul">Nice kitten</a>
 
 <!-- To get a responsive image output like this one: -->
-<img src="http://placekitten.com/800/400"
-	 srcset="http://placekitten.com/320/160 320w,
-             http://placekitten.com/480/240 480w,
-             http://placekitten.com/800/400 800w"
+<img src="http://picsum.photos/800/400"
+	 srcset="http://picsum.photos/320/160 320w,
+             http://picsum.photos/480/240 480w,
+             http://picsum.photos/800/400 800w"
      sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
      class="gandul"
      alt="Nice kitten" />
@@ -119,10 +119,10 @@ Write an anchor hyperlink with the reference to your image and set the class gan
 
 ```html
 <!-- What you'll write: -->
-<a href="http://placekitten.com/800/400" data-width="800" class="gandul">Nice kitten</a>
+<a href="http://picsum.photos/800/400" data-width="800" class="gandul">Nice kitten</a>
 
 <!-- What you'll get : -->
-<img src="http://placekitten.com/800/400" width="800" alt="Nice kitten" />
+<img src="http://picsum.photos/800/400" width="800" alt="Nice kitten" />
 ```
 
 
@@ -132,10 +132,10 @@ Any other attributes will remain as they are, which means that if you already se
 
 ```html
 <!-- input -->
-<a href="http://placekitten.com/800/400" id="cat" class="nice kitten gandul">Nice kitten</a>
+<a href="http://picsum.photos/800/400" id="cat" class="nice kitten gandul">Nice kitten</a>
 
 <!-- gandul output -->
-<img src="http://placekitten.com/800/400" id="cat" class="nice kitten gandul" alt="Nice kitten" />
+<img src="http://picsum.photos/800/400" id="cat" class="nice kitten gandul" alt="Nice kitten" />
 ```
 
 ## Options
