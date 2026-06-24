@@ -29,8 +29,8 @@
   },
   "homepage": "https://moro.es/projects/gandul-accessible-image-lazy-loading/",
   "devDependencies": {
-    "@babel/core": "^7.10.5",
-    "@babel/preset-env": "^7.10.4",
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
     "gulp": "^5.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-header": "^1.8.9",
